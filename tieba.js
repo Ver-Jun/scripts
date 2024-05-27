@@ -34,7 +34,8 @@ const TIEBA_API = {
     if (message) {
         // await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
 
-        console.log('「百度贴吧签到报告」'\n,`${message}`)
+        console.log('「百度贴吧签到报告」')
+        console.log(`${message}`)
     }
 })();
 
