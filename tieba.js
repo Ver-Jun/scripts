@@ -32,7 +32,9 @@ const TIEBA_API = {
         await $.wait(randomWait(2000, 3000));
     }
     if (message) {
-        await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
+        // await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
+
+        console.log('「百度贴吧签到报告」'\n,`${message}`)
     }
 })();
 
