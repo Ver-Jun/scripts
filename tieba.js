@@ -32,10 +32,10 @@ const TIEBA_API = {
         await $.wait(randomWait(2000, 3000));
     }
     if (message) {
-        // await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
+        await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
 
-        console.log('「百度贴吧签到报告」')
-        console.log(`${message}`)
+        // console.log('「百度贴吧签到报告」')
+        // console.log(`${message}`)
     }
 })();
 
@@ -60,8 +60,8 @@ async function main(cookie) {
  */
 async function getTBS(cookie) {
     const data = await sendRequest(TIEBA_API.TBS_API, 'get', {}, cookie);
-    console.log('getTBS')
-    console.log(data)
+    // console.log('getTBS')
+    // console.log(data)
     if (!1 === data.is_login) {
         console.log('TBS 已失效！可能是 cookie 失效了');
         process.exit(1);
@@ -76,12 +76,7 @@ async function getTBS(cookie) {
  */
 async function getTieBaFollow(cookie) {
     const data = await sendRequest(TIEBA_API.FOLLOW_API, 'get', {}, cookie)
-    console.log(data)
-    console.log(1)
-    console.log(data['data'])
-    console.log(12)
-    console.log(data['data']['like_forum'])
-    console.log(123)
+    // console.log(data)
     // const likeForum = data.data.like_forum
     const likeForum = data['data']['like_forum']
     return likeForum.map(forum => forum.forum_name);
