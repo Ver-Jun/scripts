@@ -32,10 +32,10 @@ const TIEBA_API = {
         await $.wait(randomWait(2000, 3000));
     }
     if (message) {
-        await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
+        // await notify.sendNotify(`「百度贴吧签到报告」`, `${message}`);
 
-        // console.log('「百度贴吧签到报告」')
-        // console.log(`${message}`)
+        console.log('「百度贴吧签到报告」')
+        console.log(`${message}`)
     }
 })();
 
@@ -100,6 +100,7 @@ async function signTieBa(forum_name, tbs, cookie) {
         tbs: tbs,
         sign: encodedSign
     }, cookie);
+    console.log(`forum_name ${JSON.stringify(data)}`)
     if ('0' === data.error_code) {
         success.push(forum_name);
         message += `【${forum_name}】签到成功, 连续签到：${data.user_info.cont_sign_num}天, 累计签到：${data.user_info.total_sign_num}天\n`
