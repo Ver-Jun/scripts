@@ -60,6 +60,8 @@ async function main(cookie) {
  */
 async function getTBS(cookie) {
     const data = await sendRequest(TIEBA_API.TBS_API, 'get', {}, cookie);
+    console.log('getTBS')
+    console.log(data)
     if (!1 === data.is_login) {
         console.log('TBS 已失效！可能是 cookie 失效了');
         process.exit(1);
