@@ -74,7 +74,9 @@ async function getTBS(cookie) {
  */
 async function getTieBaFollow(cookie) {
     const data = await sendRequest(TIEBA_API.FOLLOW_API, 'get', {}, cookie)
+    console.log(data)
     const likeForum = data.data.like_forum
+    console.log(likeForum)
     return likeForum.map(forum => forum.forum_name);
 }
 
